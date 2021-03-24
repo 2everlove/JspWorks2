@@ -1,0 +1,6 @@
+127.0.0.1 - - [24/Mar/2021:11:25:39 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [24/Mar/2021:11:25:42 +0900] "GET /bootstrapapex/mall.jsp HTTP/1.1" 200 327
+0:0:0:0:0:0:0:1 - - [24/Mar/2021:11:25:42 +0900] "GET /bootstrapapex/resources/css/bootstrap.css HTTP/1.1" 200 199412
+0:0:0:0:0:0:0:1 - - [24/Mar/2021:11:26:27 +0900] "GET /bootstrapapex/mall.jsp HTTP/1.1" 200 390
+0:0:0:0:0:0:0:1 - - [24/Mar/2021:11:26:27 +0900] "GET /bootstrapapex/resources/css/bootstrap.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Mar/2021:11:26:27 +0900] "GET /bootstrapapex/resources/img/spring.jpg HTTP/1.1" 200 814226
