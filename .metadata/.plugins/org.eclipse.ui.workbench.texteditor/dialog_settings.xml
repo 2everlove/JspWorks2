@@ -4,7 +4,13 @@
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="btn"/>
 		<list key="findhistory">
+			<item value="btn"/>
+			<item value="col-md-4"/>
+			<item value="navbar-nav"/>
+			<item value="ul"/>
+			<item value="navbar"/>
 			<item value="jumbot"/>
 		</list>
 		<list key="replacehistory">
