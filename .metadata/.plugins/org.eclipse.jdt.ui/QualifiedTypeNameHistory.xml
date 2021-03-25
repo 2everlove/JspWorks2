@@ -4,4 +4,5 @@
     <fullyQualifiedTypeName name="dto.ProductRepository"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="dto.Product"/>
+    <fullyQualifiedTypeName name="dao.ProductRepository"/>
 </qualifiedTypeNameHistroy>

@@ -1,3 +1,5 @@
+<%@page import="dao.ProductRepository"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="dto.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -18,7 +20,9 @@
 		</div>
 	</div>
 	<%
-		ArrayList<Product> listOfProducts = productDAO.getAllProducts();
+		ProductRepository dao = ProductRepository.getInstance();
+		ArrayList<Product> listOfProducts = dao.getAllProducts();
+		DecimalFormat formatter = new DecimalFormat("###,###");
 	%>
 	<div class="container">
 		<div class="row" align="center">
@@ -28,9 +32,11 @@
 				
 			%>
 			<div class="col-md-4">
+				<img src="/WebMarket/resources/images/<%=product.getFilename()%>" style="width: 100%">
+				<%-- <img src="./resources/images/<%=product.getFilename()%>" style="width: 100%"> --%>
 				<h3><%=product.getPname() %></h3>
 				<p><%=product.getDescription() %>
-				<p><%=product.getUniPrice() %>원
+				<p><%=formatter.format(product.getUniPrice()) %> 원
 				<p><a href="./product.jsp?id=<%=product.getProductId() %>" class="btn btn-secondary" role="button">상세 정보 &raquo;</a>
 			</div>
 			<%
