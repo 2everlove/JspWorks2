@@ -14,6 +14,7 @@ public class Product implements Serializable {
 	private long unitInStock; //재고 수
 	private String condition; //신상,중고, 재고
 	private String filename;
+	private int quantity;
 
 	public Product() {
 		super();
@@ -38,10 +39,19 @@ public class Product implements Serializable {
 	public String getPname() {
 		return pname;
 	}
-
+	
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 
 	public Integer getUniPrice() {
 		return uniPrice;

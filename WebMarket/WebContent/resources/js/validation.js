@@ -3,6 +3,14 @@ function CheckAddProduct(){
 	var pname = document.getElementById("pname");
 	var unitPrice = document.getElementById("unitPrice");
 	var unitsInStock = document.getElementById("unitsInStock");
+	/*var form = document.newProduct;
+	var id = form.productId.value;
+	var reg = /^P[0-9]{4,100}$/;
+	
+	if(!reg.test(id)){
+		alert("error");
+		return false;
+	}*/
 	
 	//상품 아이디 체크
 	if(!check(/^P[0-9]{4,100}$/, productId, "[상품 코드]\nP와 숫자를 조합하여 5~12자까지 입력하세요\n첫 글자는 반드시 P로 시작하세요"))
