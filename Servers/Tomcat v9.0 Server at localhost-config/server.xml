@@ -154,7 +154,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 	  
 	  <Context docBase="C:\\upload" path="/WebMarket/resources/images" reloadbale="true"/>
-      <Context docBase="bootstrapapex" path="/bootstrapapex" reloadable="true" source="org.eclipse.jst.jee.server:bootstrapapex"/><Context docBase="WebMarket" path="/WebMarket" reloadable="true" source="org.eclipse.jst.jee.server:WebMarket"/><Context docBase="filterstudy" path="/filterstudy" reloadable="true" source="org.eclipse.jst.jee.server:filterstudy"/></Host>
+      <Context docBase="bootstrapapex" path="/bootstrapapex" reloadable="true" source="org.eclipse.jst.jee.server:bootstrapapex"/><Context docBase="WebMarket" path="/WebMarket" reloadable="true" source="org.eclipse.jst.jee.server:WebMarket"/><Context docBase="filterstudy" path="/filterstudy" reloadable="true" source="org.eclipse.jst.jee.server:filterstudy"/><Context docBase="jweb" path="/jweb" reloadable="true" source="org.eclipse.jst.jee.server:jweb"/></Host>
     </Engine>
   </Service>
 </Server>
