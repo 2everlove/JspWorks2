@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="8005" shutdown="SHUTDOWN">
+ --><Server port="18005" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -154,7 +154,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 	  
 	  <Context docBase="C:\\upload" path="/WebMarket/resources/images" reloadbale="true"/>
-      <Context docBase="bootstrapapex" path="/bootstrapapex" reloadable="true" source="org.eclipse.jst.jee.server:bootstrapapex"/><Context docBase="WebMarket" path="/WebMarket" reloadable="true" source="org.eclipse.jst.jee.server:WebMarket"/><Context docBase="filterstudy" path="/filterstudy" reloadable="true" source="org.eclipse.jst.jee.server:filterstudy"/><Context docBase="jweb" path="/jweb" reloadable="true" source="org.eclipse.jst.jee.server:jweb"/></Host>
+      <Context docBase="bootstrapapex" path="/bootstrapapex" reloadable="true" source="org.eclipse.jst.jee.server:bootstrapapex"/><Context docBase="WebMarket" path="/WebMarket" reloadable="true" source="org.eclipse.jst.jee.server:WebMarket"/><Context docBase="filterstudy" path="/filterstudy" reloadable="true" source="org.eclipse.jst.jee.server:filterstudy"/><Context docBase="jweb" path="/jweb" reloadable="true" source="org.eclipse.jst.jee.server:jweb"/><Context docBase="sessionStudy" path="/sessionStudy" reloadable="true" source="org.eclipse.jst.jee.server:sessionStudy"/></Host>
     </Engine>
   </Service>
 </Server>

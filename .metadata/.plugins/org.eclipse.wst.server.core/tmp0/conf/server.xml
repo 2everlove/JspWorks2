@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="8005" shutdown="SHUTDOWN">
+ --><Server port="18005" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -154,7 +154,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 	  
 	  <Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\\upload" path="/WebMarket/resources/images" reloadbale="true"/>
-      <Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\bootstrapapex" path="/bootstrapapex" reloadable="true" source="org.eclipse.jst.jee.server:bootstrapapex"/><Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\WebMarket" path="/WebMarket" reloadable="true" source="org.eclipse.jst.jee.server:WebMarket"/><Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\filterstudy" path="/filterstudy" reloadable="true" source="org.eclipse.jst.jee.server:filterstudy"/><Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jweb" path="/jweb" reloadable="true" source="org.eclipse.jst.jee.server:jweb"/></Host>
+      <Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\bootstrapapex" path="/bootstrapapex" reloadable="true" source="org.eclipse.jst.jee.server:bootstrapapex"/><Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\WebMarket" path="/WebMarket" reloadable="true" source="org.eclipse.jst.jee.server:WebMarket"/><Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\filterstudy" path="/filterstudy" reloadable="true" source="org.eclipse.jst.jee.server:filterstudy"/><Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jweb" path="/jweb" reloadable="true" source="org.eclipse.jst.jee.server:jweb"/><Context docBase="C:\JspWorks2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\sessionStudy" path="/sessionStudy" reloadable="true" source="org.eclipse.jst.jee.server:sessionStudy"/></Host>
     </Engine>
   </Service>
 </Server>
