@@ -18,7 +18,7 @@
 	%>
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">
+			<h1 class="display-3" align="center">
 				<%=greeting %>
 			</h1>
 		</div>

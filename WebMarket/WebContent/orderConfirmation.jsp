@@ -24,6 +24,7 @@
 			String n = thisCookie.getName();
 			if(n.equals("Shipping_cartId"))
 				shipping_cartId = URLDecoder.decode((thisCookie.getValue()),"utf-8");
+				/* shipping_cartId = thisCooke.getValue(); 이 방식은 한글을 풀 수 없으므로 utf-8로 encode한 내용을 decode로 풀어서 한글을 쓸 수 있게 만듬*/
 			if(n.equals("Shipping_name"))
 				shipping_name = URLDecoder.decode((thisCookie.getValue()),"utf-8");
 			if(n.equals("Shipping_shippingDate"))
@@ -69,7 +70,7 @@
 		<div>
 			<table class="table table-hover">
 				<tr>
-					<th class="text-center">도서</th>
+					<th class="text-center">제품</th>
 					<th class="text-center">#</th>
 					<th class="text-center">가격</th>
 					<th class="text-center">소계</th>

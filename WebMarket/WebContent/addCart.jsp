@@ -1,6 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="dto.Product"%>
 <%@page import="dao.ProductRepository"%>
+<%@ include file="dbconn.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -11,20 +12,23 @@
 	}
 	
 	// 주문 제품의 객체 가져오기
-	ProductRepository dao = ProductRepository.getInstance();
-	
-	Product product = dao.getProductByid(id);
-	if(product == null){
-		response.sendRedirect("exceptionNoProductId.jsp");
-	}
-	
-	ArrayList<Product> goodsList = dao.getAllProducts();
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 	Product goods = new Product();
-	for(int i=0; i<goodsList.size();i++){
-		goods = goodsList.get(i);
-		if(goods.getProductId().equals(id)){
-			break;
-		}
+	
+	String sql = "select * from product where p_id = ?";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1, id);
+	rs = pstmt.executeQuery();
+	if(rs.next()){
+		goods.setProductId(rs.getString("p_id"));
+		goods.setPname(rs.getString("p_name"));
+		goods.setUnitPrice(rs.getInt("p_unitPrice"));
+		goods.setDescription(rs.getString("p_description"));
+		goods.setCategory(rs.getString("p_category"));
+		goods.setManufacturer(rs.getString("p_manufacturer"));
+		goods.setUnitInStock(rs.getLong("p_unitsInStock"));
+		goods.setCondition(rs.getString("p_condition"));
 	}
 	
 	//세션 발금 및 유지
@@ -51,5 +55,6 @@
 		list.add(goods);
 	}
 	
-	response.sendRedirect("product.jsp?id="+id);
+	RequestDispatcher dispatcher = request.getRequestDispatcher("product.jsp?id="+id);
+	dispatcher.forward(request, response);
 %>

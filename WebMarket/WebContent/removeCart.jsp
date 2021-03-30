@@ -9,13 +9,6 @@
 		return;
 	}
 	
-	ProductRepository dao = ProductRepository.getInstance();
-	
-	Product product = dao.getProductByid(id);
-	if(product == null){
-		response.sendRedirect("exceptionNoProductId.jsp");
-	}
-	
 	ArrayList<Product> cartList = (ArrayList<Product>)session.getAttribute("cartlist");
 	Product goodsQnt = new Product();
 	for(int i = 0; i < cartList.size(); i++){
@@ -25,5 +18,6 @@
 		}
 	}
 	
-	response.sendRedirect("cart.jsp");
+	RequestDispatcher dispatcher = request.getRequestDispatcher("cart.jsp");
+	dispatcher.forward(request, response);
 %>
