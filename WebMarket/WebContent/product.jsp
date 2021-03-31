@@ -34,11 +34,12 @@
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from product where p_id = ?";
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, productId);
-		rs = pstmt.executeQuery();
-		if(rs.next()){
+		try{
+			String sql = "select * from product where p_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, productId);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
 	%>
 	<div class="container">
 		<div class="row">
@@ -64,13 +65,17 @@
 		<hr>
 	</div>
 	<%
+			} 
+		} catch(Exception e) {
+			e.getStackTrace();
+		} finally {
+			if(rs != null)
+				rs.close();
+			if(pstmt != null)
+				pstmt.close();
+			if(conn != null)
+				conn.close();
 		}
-		if(rs != null)
-			rs.close();
-		if(pstmt != null)
-			pstmt.close();
-		if(conn != null)
-			conn.close();
 	%>
 	<jsp:include page="footer.jsp"/>
 </body>

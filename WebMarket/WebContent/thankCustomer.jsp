@@ -39,14 +39,16 @@
 		ArrayList<Product> cartList = (ArrayList<Product>)session.getAttribute("cartlist");
 		if(cartList == null)
 			cartList = new ArrayList<Product>();
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
 		for(int i = 0; i < cartList.size(); i++){
 			
 			Product product = cartList.get(i);
 			
 			int total = product.getUniPrice()*product.getQuantity();
 			
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
 			
 			String sql="select p_unitsInStock from product where p_id = ?";
 			
@@ -63,14 +65,13 @@
 			pstmt.setLong(1, qun);
 			pstmt.setString(2, product.getProductId());
 			pstmt.executeUpdate();
-			
+		}
 			if(rs != null)
 				rs.close();
 			if(pstmt != null)
 				pstmt.close();
 			if(conn != null)
 				conn.close();
-		}
 	%>
 	<jsp:include page="menu.jsp"/>
 	<div class="jumbotron">

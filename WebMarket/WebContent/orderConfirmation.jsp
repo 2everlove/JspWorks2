@@ -98,7 +98,7 @@
 					<td></td>
 					<td></td>
 					<td class="text-right"><strong>총액:</strong></td>
-					<td class="text-center text-danger"><strong><%=formatter.format(sum)%></strong></td>
+					<td class="text-center"><span class="text-center text-danger"><strong><%=formatter.format(sum)%></strong></span> 원</td>
 				</tr>					
 			</table>
 			

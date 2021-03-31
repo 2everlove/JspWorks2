@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="dto.ProductRepository"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="dto.Product"/>
     <fullyQualifiedTypeName name="dao.ProductRepository"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.dom.Filter"/>
@@ -18,4 +17,7 @@
     <fullyQualifiedTypeName name="java.text.DateFormat"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.jweb.board.Board"/>
 </qualifiedTypeNameHistroy>

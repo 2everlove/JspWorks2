@@ -24,8 +24,25 @@
 		<div class="row">
 			<table style="width: 100%">
 				<tr>
-					<td align="left"><a href="./deleteCart.jsp?cartId=<%=cartId%>" class="btn btn-danger">삭제하기</a>
-					<td align="right"><a href="./shippingInfo.jsp?cartId=<%=cartId%>" class="btn btn-success">주문하기</a>
+					<%
+						int sum=0;
+						DecimalFormat formatter = new DecimalFormat("###,###");
+						ArrayList<Product>cartList = (ArrayList<Product>) session.getAttribute("cartlist");
+						if(cartList==null)
+							cartList = new ArrayList<Product>();
+						
+						if(cartList.size()==0){
+					%>
+						<td align="left"><a href="#" class="btn btn-danger" onclick="alert('삭제할 품목이 없습니다.')">삭제하기</a>
+						<td align="right"><a href="#" class="btn btn-success" onclick="alert('주문할 품목이 없습니다.')">주문하기</a>
+					<%
+						} else {
+					%>
+						<td align="left"><a href="./deleteCart.jsp?cartId=<%=cartId%>" class="btn btn-danger">삭제하기</a>
+						<td align="right"><a href="./shippingInfo.jsp?cartId=<%=cartId%>" class="btn btn-success">주문하기</a>
+					<% 
+						}
+					%>
 				</tr>
 			</table>
 		</div>
@@ -38,18 +55,11 @@
 					<th>소계</th>
 					<th>비고</th>
 				</tr>
-				<%
-					int sum=0;
-					DecimalFormat formatter = new DecimalFormat("###,###");
-					ArrayList<Product>cartList = (ArrayList<Product>) session.getAttribute("cartlist");
-					if(cartList==null)
-						cartList = new ArrayList<Product>();
-					
+				<%					
 					for(int i = 0; i < cartList.size();i++){
 						Product product = cartList.get(i);
 						int total = product.getUniPrice() * product.getQuantity();
 						sum = sum + total;
-					
 				%>
 				<tr>
 					<td><b><%=product.getProductId()%></b> <%=product.getPname()%></td>

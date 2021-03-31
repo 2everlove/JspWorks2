@@ -27,7 +27,7 @@
 			<div class="form-group row">
 				<label class="col-sm-2">배송일</label>
 				<div class="col-sm-3">
-					<input name="shippingDate" type="text" class="form-control" value="<%Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Seoul")); out.println(cal.get(Calendar.YEAR)+"/"+cal.get(Calendar.MONTH)+"/"+cal.get(Calendar.DATE));%>">(yyyy/mm/dd)
+					<input name="shippingDate" type="text" class="form-control" value="<%Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Seoul")); out.println(cal.get(Calendar.YEAR)+"/"+(cal.get(Calendar.MONTH)+1)+"/"+cal.get(Calendar.DATE));%>">(yyyy/mm/dd)
 				</div>
 			</div>
 			<div class="form-group row">

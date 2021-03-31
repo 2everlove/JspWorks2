@@ -28,42 +28,47 @@
 		</div>
 	</div>
 	<div class="container">
-		<%
-			DecimalFormat formatter = new DecimalFormat("###,###");
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			
-			String sql = "select * from product";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while(rs.next()){
-		%>
-		<div class="col-md4">
-			<img src="/WebMarket/resources/images/<%=rs.getString("p_fileName")%>" style="width: 100%">
-			<h3><%=rs.getString("p_name")%></h3>
-			<p><%=rs.getString("p_description") %>
-			<p><%=formatter.format(rs.getInt("p_unitPrice"))%>원
-			<p><%
-				if(edit.equals("update")){
-				%>
-				<a href="updateProduct.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-success" role="button"> 수정 &raquo;</a>
-				<% 
-					} else if (edit.equals("delete")) {
-				%>
-				<a href="#" onclick="deleteConfirm('<%=rs.getString("p_id")%>')" class="btn btn-danger" role="button"> 삭제 &raquo;</a>
-				<%
-					}
-				%>
+		<div class="row" align="center">
+			<%
+				DecimalFormat formatter = new DecimalFormat("###,###");
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+				try{
+					String sql = "select * from product";
+					pstmt = conn.prepareStatement(sql);
+					rs = pstmt.executeQuery();
+					while(rs.next()){
+			%>
+			<div class="col-md-4">
+				<img src="/WebMarket/resources/images/<%=rs.getString("p_fileName")%>" style="width: 100%">
+				<h3><%=rs.getString("p_name")%></h3>
+				<p><%=rs.getString("p_description") %>
+				<p><%=formatter.format(rs.getInt("p_unitPrice"))%>원
+				<p><%
+					if(edit.equals("update")){
+					%>
+					<a href="updateProduct.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-success" role="button"> 수정 &raquo;</a>
+					<% 
+						} else if (edit.equals("delete")) {
+					%>
+					<a href="#" onclick="deleteConfirm('<%=rs.getString("p_id")%>')" class="btn btn-danger" role="button"> 삭제 &raquo;</a>
+					<%
+						}
+					%>
+			</div>
+			<% 		}
+				} catch(Exception e) {
+					e.getMessage();
+				} finally {
+					if(rs != null)
+						rs.close();
+					if(pstmt != null)
+						pstmt.close();
+					if(conn != null)
+						conn.close();
+				}
+			%>
 		</div>
-		<% 
-			} 
-			if(rs != null)
-				rs.close();
-			if(pstmt != null)
-				pstmt.close();
-			if(conn != null)
-				conn.close();
-		%>
 	</div>
 	<jsp:include page="footer.jsp"/>
 </body>

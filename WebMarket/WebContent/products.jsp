@@ -1,11 +1,7 @@
-<%@page import="dao.ProductRepository"%>
 <%@page import="java.text.DecimalFormat"%>
-<%@page import="dto.Product"%>
-<%@page import="java.util.ArrayList"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session"/>
 <%@ include file="dbconn.jsp" %>
 <!DOCTYPE html>
 <html>
