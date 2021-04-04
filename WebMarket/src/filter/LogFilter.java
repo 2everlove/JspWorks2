@@ -57,7 +57,16 @@ public class LogFilter implements Filter {
 	@Override
 	public void destroy() {
 	}
-
+	
+	public String getURL(ServletRequest request) {
+		HttpServletRequest req;
+		String currentPath="";
+		if(request instanceof HttpServletRequest) {
+			req = (HttpServletRequest)request;
+			currentPath = req.getRequestURI();
+		}
+		return currentPath;
+	}
 
 
 }
