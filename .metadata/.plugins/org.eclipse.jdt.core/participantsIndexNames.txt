@@ -7,6 +7,10 @@ C:\JspWorks2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3892926889.in
 \sessionStudy\src
 C:\JspWorks2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1040450698.index
 \bootstrapapex\src
+C:\JspWorks2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1959139619.index
+\jweb\src
+C:\JspWorks2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\135531155.index
+\jweb\src
 C:\JspWorks2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\593022972.index
 \filterstudy\src
 C:\JspWorks2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3178133098.index
