@@ -1,5 +1,5 @@
 <h2># JspWorks2<h2>
- <b>JSP practice2</b>
+ <b>JSP practice2</b><br>
 
 <ul>
  <li>Server : apache-tomcat-9.0.43</li>
